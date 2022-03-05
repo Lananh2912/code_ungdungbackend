@@ -1,0 +1,23 @@
+extends ../../layouts/index
+
+block content
+  .container
+
+    if error 
+      .alert.alert-danger(role='alert')= error
+
+    .d-flex.justify-content-between.align-items-start
+      h2 Login 
+
+    form(method="post")
+      .form-group
+        label(for='username') Username
+        input#username.form-control(required, type='text' name="username")
+
+      .form-group
+        label(for='password') Password
+        input#password.form-control(required, type='password' name="password")
+
+      .form-group
+        button.btn.btn-primary(type='submit') Login
+

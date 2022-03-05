@@ -1,0 +1,27 @@
+extends ../../layouts/index
+
+block content
+  .d-flex.justify-content-between.align-items-start
+    h2 Danh sách sinh viên 
+    a.btn.btn-primary(href="/students/add") Thêm sinh viên mới
+
+  table.table.table-striped.table-hover.mt-4
+    thead
+      tr
+        th(scope='col') #
+        th(scope='col') Mã sinh viên
+        th(scope='col') Họ tên
+        th(scope='col') Địa chỉ
+        th(scope='col') Hành động
+    tbody
+      each student, index in students
+        tr
+          th(scope='row')= index + 1
+          td= student.studentCode
+          td= student.fullname
+          td= student.address
+          td
+            .d-flex.align-items-start
+              a.btn.btn-info(href="/students/edit/" + student._id) Sửa
+              form(action="/students/delete/" + student._id, method="post")
+                button.btn.btn-danger.ml-2(type="submit") Xóa

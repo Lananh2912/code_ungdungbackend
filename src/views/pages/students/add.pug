@@ -1,0 +1,24 @@
+extends ../../layouts/index
+
+block content
+  .container 
+    .d-flex.justify-content-between.align-items-start
+      h2 Thêm sinh viên mới 
+
+    form(method="post")
+      .form-group
+        label(for='studentCode') Mã số sinh viên
+        input#studentCode.form-control(required, type='text' name="studentCode")
+
+      .form-group
+        label(for='fullname') Họ tên
+        input#fullname.form-control(required, type='text' name="fullname")
+
+      .form-group
+        label(for='address') Địa chỉ
+        textarea#address.form-control(required, name="address")
+
+      .form-group
+        button.btn.btn-primary(type='submit') Tạo
+        
+

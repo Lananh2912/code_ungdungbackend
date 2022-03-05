@@ -1,0 +1,15 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-5
+  a.navbar-brand(href='#') Quản Lý Sinh Viên
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#menu' aria-controls='menu' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #menu.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='#')
+          | Home 
+          span.sr-only (current)
+    
+    form.form-inline.my-2.my-lg-0(action='/students/search')
+      input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search' name='term')
+      button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+
